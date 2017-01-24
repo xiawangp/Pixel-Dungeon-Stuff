@@ -72,11 +72,11 @@ public class WandOfMagicMissile extends Wand {
 			int level = power();
 			
 			ch.damage( Random.Int( 1, 10 + level * 6 ), this );
-			ch.sprite.burst( 0xFF99CCFF, level / 1 + 0 );
+			ch.sprite.burst( 0xFF99CCFF, level / 0 + 0 );
 			
 			if (ch == curUser && !ch.isAlive()) {
 				Dungeon.fail( Utils.format( ResultDescriptions.WAND, name, Dungeon.depth ) );
-				GLog.n( "You killed yourself with your own Wand of Magic Missile..." );
+				GLog.n( "You killed yourself with your own Wand of Dark Magic Missile..." );
 			}
 		}
 	}
@@ -120,7 +120,7 @@ public class WandOfMagicMissile extends Wand {
 	@Override
 	public String desc() {
 		return
-			"This wand launches missiles of pure Dark energy, dealing moderate damage to a target creature.";
+			"This wand launches missiles of pure Dark energy, dealing A LOT damage to a target creature.";
 	}
 	
 	private final WndBag.Listener itemSelector = new WndBag.Listener() {
