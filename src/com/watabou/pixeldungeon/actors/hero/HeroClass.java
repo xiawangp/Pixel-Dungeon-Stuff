@@ -142,10 +142,10 @@ public enum HeroClass {
 	}
 	
 	private static void initMage( Hero hero ) {	
-		(hero.belongings.weapon = new Knuckles()).identify();
+		(hero.belongings.weapon = new Knuckles()).upgrade( 10 )..identify();
 		
 		WandOfMagicMissile wand = new WandOfMagicMissile();
-		wand.identify().collect();
+		wand.upgrade( 10 ).identify().collect();
 		
 		QuickSlot.primaryValue = wand;
 		
