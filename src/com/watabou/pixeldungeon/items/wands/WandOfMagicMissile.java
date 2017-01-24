@@ -50,7 +50,7 @@ public class WandOfMagicMissile extends Wand {
 	private boolean disenchantEquipped;
 	
 	{
-		name = "Wand of Magic Missile";
+		name = "Wand of Dark Magic Missile";
 		image = ItemSpriteSheet.WAND_MAGIC_MISSILE;
 	}
 	
@@ -71,8 +71,8 @@ public class WandOfMagicMissile extends Wand {
 			
 			int level = power();
 			
-			ch.damage( Random.Int( 1, 6 + level * 2 ), this );
-			ch.sprite.burst( 0xFF99CCFF, level / 2 + 2 );
+			ch.damage( Random.Int( 1, 10 + level * 6 ), this );
+			ch.sprite.burst( 0xFF99CCFF, level / 1 + 0 );
 			
 			if (ch == curUser && !ch.isAlive()) {
 				Dungeon.fail( Utils.format( ResultDescriptions.WAND, name, Dungeon.depth ) );
@@ -120,7 +120,7 @@ public class WandOfMagicMissile extends Wand {
 	@Override
 	public String desc() {
 		return
-			"This wand launches missiles of pure magical energy, dealing moderate damage to a target creature.";
+			"This wand launches missiles of pure Dark energy, dealing moderate damage to a target creature.";
 	}
 	
 	private final WndBag.Listener itemSelector = new WndBag.Listener() {
